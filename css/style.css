@@ -19,12 +19,39 @@ body {
 		to right,
 		#ffffff,
 		#ffc394
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-attachment: fixed;
+}
+
+#toTopButton {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 100000;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+#toTopButton:hover {
+	animation: buttonZoom 0.5s forwards;
+}
+
+@keyframes buttonZoom {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.1);
+	}
 }
 
 .container {
 	margin: 0 auto;
-	padding: 2% 3%;
+	padding: 2% 2%;
 	min-width: 100%;
 	min-height: 100%;
 }
@@ -48,16 +75,21 @@ img {
 	height: auto;
 }
 
-header {
+.header {
 	display: flex;
-	justify-content: space-between;
-	/* order: 0; */
-	width: 100%;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
 	/* padding: 16px 36px; */
 	/* height: 100%; */
 }
 
-header > a:first-of-type {
+.burger {
+  display: none;
+}
+
+.petsy-logo {
 	font-size: 2.5rem;
 	font-family: "Times New Roman", Times, serif;
 	text-decoration: none;
@@ -65,14 +97,14 @@ header > a:first-of-type {
 }
 
 #search {
-	width: 64%;
+	width: 100%;
 	height: 48px;
 	border-radius: 25px;
 	background-color: rgb(239, 239, 239);
 	border: 1px solid #cecece;
-	position: absolute;
-	left: 10%;
-	display: flex;
+	/* position: absolute; */
+	/* left: 10%; */
+	/* display: flex; */
 	justify-content: space-between;
 	padding-left: 18px;
 	font-size: 1em;
@@ -90,7 +122,9 @@ nav {
 	display: flex;
 	width: 22%;
 	justify-content: space-between;
-	align-items: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  white-space: nowrap;
 }
 
 nav a {
@@ -100,10 +134,11 @@ nav a {
 }
 
 .shopLinks {
-  background-color: rgb(236, 236, 236);
-  border-radius: 5px;
-  width: 100%;
-  margin-top: 1em;
+	/* background-color: rgb(255, 255, 255); */
+	background-color: #ddd3f1;
+	border-radius: 5px;
+	width: 100%;
+	margin-top: 1em;
 	padding: 16px 0;
 	font-family: "Roboto", sans-serif;
 	font-size: 0.9em;
@@ -112,8 +147,8 @@ nav a {
 	justify-content: space-around;
 	order: 1;
 	overflow: hidden;
-  position: sticky;
-  top: 0;
+	position: sticky;
+	top: 0;
 }
 
 /* .sticky {
@@ -126,6 +161,10 @@ nav a {
 	color: #222;
 }
 
+.shopLinks a.active {
+  background-color: #fff;
+}
+
 .shopLinks a:hover {
 	animation: linkHover 0.7s forwards;
 }
@@ -135,7 +174,7 @@ nav a {
 		transform: scale(1);
 	}
 	to {
-		transform: scale(1.3);
+		transform: scale(0.9);
 		background-color: rgba(131, 131, 131, 0.507);
 		color: white;
 		border-radius: 3px;
@@ -146,9 +185,9 @@ hr {
 	width: 100%;
 	padding: 0;
 	/* margin: 0 auto; */
-  color: rgb(222, 222, 222);
-  position: sticky;
-  top: 1;
+	color: rgb(222, 222, 222);
+	position: sticky;
+	top: 1;
 }
 
 h1 {
@@ -169,17 +208,17 @@ h1 {
 	border-radius: 5px;
 	width: 70%;
 	max-width: 100%;
-  font-family: 'Roboto', serif;
+	font-family: "Roboto", serif;
 	overflow: hidden;
 	margin-right: 16px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	flex: 1.5;
+	flex: 1;
 }
 
 .section1text {
-  text-align: center;
+	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -198,8 +237,8 @@ h1 {
 }
 
 .main-column {
-  margin-left: 1%;
-  font-family: 'Charter', serif;
+	margin-left: 1%;
+	font-family: "Charter", serif;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -223,14 +262,15 @@ h1 {
 }
 
 .section3 {
-	font-size: 1.7em;
+	font-size: 1.4em;
 	border-radius: 5px;
 	overflow: hidden;
 	display: flex;
 	min-height: 30%;
 	flex-direction: column;
 	align-content: flex-start;
-	justify-content: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .weenie-row {
@@ -239,6 +279,10 @@ h1 {
 	height: auto;
 	display: flex;
 	flex-flow: column nowrap;
+}
+
+.weenie-header {
+	font-family: "Roboto", sans-serif;
 }
 
 .weenie-links {
@@ -267,7 +311,7 @@ h1 {
 
 .summary {
 	margin: 2em -3em;
-	padding: 1em 0 0 3em;
+	/* padding: 1em 0 0 3em; */
 	display: flex;
 	flex-flow: column nowrap;
 }
@@ -286,13 +330,12 @@ h1 {
 }
 
 .summary-content p {
-  text-align: justify;
+	text-align: justify;
 }
 
 .summary-content-1,
 .summary-content-2,
 .summary-content-3 {
-	z-index: 1;
 	width: 80%;
 	height: auto;
 	padding: 0 2em;
@@ -324,7 +367,7 @@ h1 {
 .reviews {
 	display: flex;
 	flex-flow: column nowrap;
-  font-family: 'Roboto', serif;
+	font-family: "Roboto", serif;
 }
 
 .reviews-content {
@@ -376,25 +419,105 @@ footer {
 	margin-top: 1em;
 	padding: 0 2em;
 	position: relative;
-	left: 0;
-	bottom: 0;
+	/* left: 0; */
+	/* bottom: 0; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	color: aliceblue;
-  font-family: 'Roboto', serif;
+	font-family: "Roboto", serif;
 	font-size: 1.1em;
 }
 
-.footer-left {
-	padding: 1em;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+footer a {
+  text-decoration: none;
+}
+
+.fa-linkedin,
+.fa-github {
+  font-size: 2em;
+  color: white;
 }
 
 .footer-right {
-  display: flex;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+	display: flex;
   justify-content: space-between;
-  flex-flow: row wrap;
+	flex-flow: row nowrap;
+}
+
+@media screen and (max-width: 420px) {
+  .header {
+    /* background-color: red; */
+    /* display: block; */
+    /* flex-direction: row; */
+    /* width: 100%; */
+    /* height: auto; */
+    margin: 0;
+  }
+
+  .header :not(:first-child) {
+    display: none;
+  }
+
+  .header .responsive {
+    position: relative;
+  }
+
+  .header .responsive a {
+    display: block;
+  }
+
+  .header .responsive .petsy-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .petsy-logo {
+    display: block;
+  }
+
+  .shopLinks a {
+    display: block;
+  }
+
+  .summary-content {
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section1 {
+    display: block;
+  }
+
+  .weenie-links {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+  }
+
+  .reviews-content {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+  }
+
+  footer {
+    display: block;
+    width: 100%;
+  }
+
+  .footer-right {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

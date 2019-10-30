@@ -17,8 +17,15 @@
 	</head>
 	<body>
 		<div class="container">
-			<header>
-				<a href="index.html">Petsy</a>
+			<header class="header">
+				<span class="petsy-logo">
+					<i
+						class="fas fa-paw petsy-logo header"
+						id="icon"
+						onclick="openMenu()"
+					></i>
+					<a href="index.html" class="petsy-logo">Petsy</a>
+				</span>
 				<div class="search">
 					<input
 						type="search"
@@ -26,9 +33,9 @@
 						id="search"
 						placeholder="Search ..."
 					/>
-					<button type="submit">
+					<!-- <button type="submit">
 						<i class="fas fa-search"></i>
-					</button>
+					</button> -->
 				</div>
 				<nav>
 					<a href="">Sell on Petsy</a>
@@ -37,12 +44,13 @@
 					<a href="">Cart</a>
 				</nav>
 			</header>
+
 			<div class="shopLinks">
-				<a href="">Toys & Entertainment</a>
-				<a href="">Food & Treats</a>
-				<a href="">Clothing</a>
-				<a href="">Dog Walking</a>
-				<a href="">Dog Grooming</a>
+				<a href="" id="toysLink">Toys & Entertainment</a>
+				<a href="" id="foodLink">Food & Treats</a>
+				<a href="" id="clotheLink">Clothing</a>
+				<a href="" id="walkLink">Dog Walking</a>
+				<a href="" id="groomLink">Dog Grooming</a>
 			</div>
 
 			<h1>
@@ -56,10 +64,11 @@
 						<div class="summary-content-1">
 							<h3>Your one-stop shop for all things pets!</h3>
 							<p>
-								We've got it all covered, from toys to booties for walking (got
-								that too) to grooming! Petsy uses the latest in proprietary
-								algorithmic technology to promote synergy amongst humans and pets.
-								Buzzwords. Marketing. Viral. Joan Calamezzo.
+								We've got it all covered, from toys to food to booties for walking (need
+								someone to <a href="#">walk for you?</a>) and even grooming! Petsy uses
+								the latest in proprietary algorithmic technology to promote
+								synergy amongst humans and pets. Buzzwords. Marketing. Viral.
+								Joan Calamezzo.
 							</p>
 						</div>
 						<div class="summary-content-2">
@@ -159,17 +168,16 @@
 								alt=""
 							/>
 							<p>
-							This person wrote on Novtober 83rd <br />
-							<span class="starHolder">
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-							</span>
-							<br />
-							In massa tempor nec feugiat nisl pretium fusce id. At auctor urna
-							nunc id cursus metus.
+								This person wrote on Novtober 83rd <br />
+								<span class="starHolder">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+								</span>
+								<br />
+								"What the hell is 'Petsy'?"
 							</p>
 						</div>
 						<div class="review-col review-2">
@@ -187,8 +195,8 @@
 									<i class="fas fa-star"></i>
 								</span>
 								<br />
-								In massa tempor nec feugiat nisl pretium fusce id. At auctor
-								urna nunc id cursus metus.
+								"Whoa take it easy man, I'll say whatever you want just put the
+								gun down"
 							</p>
 						</div>
 						<div class="review-col review-3">
@@ -206,30 +214,34 @@
 									<i class="fas fa-star"></i>
 								</span>
 								<br />
-								<span
-									>In massa tempor nec feugiat nisl pretium fusce id. At auctor
-									urna nunc id cursus metus.</span
-								>
+								"Please, I miss my family, just let me go I won't tell anyone
+								what happened here, I beg you"
 							</p>
 						</div>
 					</div>
 				</section>
+
+				<button onclick="toTop()" id="toTopButton" title="Back to Top">
+					<i class="fas fa-arrow-circle-up"></i>
+				</button>
 			</main>
-			<footer>
-				<div class="footer-left">
-					<img
-						src="Assets/Images/Ellipse_7_A0_Ellipse_13_pattern@2x.png"
-						alt=""
-					/>
-					<span>United States | English (US) | $ (USD)</span>
-				</div>
-				<div class="footer-right">
-					<span>&copy; 2019 Petsy, Inc.</span>
-					<a href="">Terms of Use</a>
-					<a href="">Privacy</a>
-					<a href="">Interest-based ads</a>
-				</div>
-			</footer>
 		</div>
+		<footer>
+			<div class="footer-right">
+				<span>&copy; 2019 Petsy, Inc.</span>
+				<span
+					>Design by: Jordan Cruz &nbsp;
+					<a href="https://www.linkedin.com/jordan-cruz-correa"
+						><i class="fab fa-linkedin"></i
+					></a>
+					<a href="https://www.github.com/JordanCruzCorrea" target="_blank"
+						><i class="fab fa-github"></i
+					></a>
+					<!-- </span> -->
+					<!-- <a href="">Privacy</a> -->
+				</span>
+			</div>
+		</footer>
+		<script src="js/script.js"></script>
 	</body>
 </html>
