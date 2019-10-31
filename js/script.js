@@ -1,7 +1,14 @@
 let windowW = window.innerWidth;
 let windowH = window.innerHeight;
-let windowX = window.matchMedia("(max-width: 420px)");
+let windowX600 = window.matchMedia("(max-width: 600px)");
+let windowX1000 = window.matchMedia("(max-width: 1000px)");
 
+let cartLink = document.getElementById("cartLink");
+let signLink = document.getElementById("signLink");
+let sellLink = document.getElementById("sellLink");
+
+let navLinks = document.querySelectorAll(".shopLinks");
+let nav = document.querySelector('#nav');
 let icon = document.getElementById("icon");
 
 window.onscroll = function() {
@@ -26,64 +33,147 @@ function toTop() {
 	document.documentElement.scrollTop = 0;
 }
 
-function openMenu() {
-	let header = document.querySelector(".header");
 
-	if (header.className === ".header") {
-		header.className += " responsive";
-	} else {
-		header.className = "header";
-	}
-}
-
-function linksToIcons(windowX) {
-	let navLinks = document.querySelector(".shopLinks");
+function linksToIcons(windowX600) {
 	let toyLink = document.getElementById("toysLink");
 	let foodLink = document.getElementById("foodLink");
 	let clothesLink = document.getElementById("clotheLink");
 	let walkLink = document.getElementById("walkLink");
 	let groomLink = document.getElementById("groomLink");
 
-	if (windowX.matches) {
+	if (windowX600.matches) {
 		toyLink.innerHTML = '<i class="fas fa-bone"></i>';
 		foodLink.innerHTML = '<i class="fas fa-utensils"></i>';
 		clothesLink.innerHTML = '<i class="fas fa-tshirt"></i>';
 		walkLink.innerHTML = '<i class="fas fa-walking"></i>';
 		groomLink.innerHTML = '<i class="fas fa-cut"></i>';
 	} else {
-		navLinks.innerHTML = `
-    <a href="" id="toysLink">Toys & Entertainment</a>
-    <a href="" id="foodLink">Food & Treats</a>
-    <a href="" id="clotheLink">Clothing</a>
-    <a href="" id="walkLink">Dog Walking</a>
-    <a href="" id="groomLink">Dog Grooming</a>`;
+		toyLink.innerHTML = "Toys & Entertainment";
+		foodLink.innerHTML = "Food & Treats";
+		clothesLink.innerHTML = "Clothing";
+		walkLink.innerHTML = "Dog Walking";
+		groomLink.innerHTML = "Dog Grooming";
 	}
 }
-windowX.addListener(linksToIcons);
-linksToIcons(windowX);
+windowX600.addListener(linksToIcons);
+linksToIcons(windowX600, windowX1000);
+
+// function navToIcons(windowX1000) {
+// 	if (windowX1000.matches) {
+// 		sellLink.innerHTML = '<i class="fas fa-store"></i>';
+// 		signLink.innerHTML = '<i class="fas fa-user-circle"></i>';
+// 		cartLink.innerHTML = '<i class="fas fa-shopping-cart"></i>';
+// 	} else {
+// 		sellLink.innerHTML = "Sell on Petsy";
+// 		signLink.innerHTML = "Sign In/Register";
+// 		cartLink.innerHTML = "Cart";
+// 	}
+// }
+// windowX1000.addListener(navToIcons);
+// navToIcons(windowX1000);
 
 function swapWeenie() {
 	let weenies = document.querySelectorAll(".weenie > img");
+	let groom = document.querySelectorAll(".groom > img");
+	let food = document.querySelectorAll(".food > img");
+	let clothes = document.querySelectorAll(".clothes > img");
+	let walk = document.querySelectorAll(".walk > img");
+
 	let weenieTarget = document.querySelector(".weenie-selected > img");
+	let groomTarget = document.querySelector(".groom-selected > img");
+	let foodTarget = document.querySelector(".food-selected > img");
+	let clothesTarget = document.querySelector(".clothes-selected > img");
+	let walkTarget = document.querySelector(".walk-selected > img");
 
-	let toyPics = [
-		"Assets/Images/pet-toy-1.jpg",
-		"Assets/Images/pet-toy-2.jpg",
-		"Assets/Images/pet-toy-3.jpg",
-		"Assets/Images/pet-toy-4.jpg",
-		"Assets/Images/pet-toy-5.jpg",
-		"Assets/Images/pet-toy-6.jpg"
-	];
+	let toyPic = "Assets/Images/pet-toy-1.jpg";
+	let groomPic = "Assets/Images/grooming-1.jpg";
+	let foodPic = "Assets/Images/pet-food-1.jpg";
+	let clothesPic = "Assets/Images/clothes-1.jpg";
+	let walkPic = "Assets/Images/walk-1.jpg";
 
-	weenieTarget.src = toyPics[0];
+	weenieTarget.src = toyPic;
+	foodTarget.src = foodPic;
+	clothesTarget.src = clothesPic;
+	groomTarget.src = groomPic;
+	walkTarget.src = walkPic;
 
 	weenies.forEach(e => {
 		e.addEventListener("click", function() {
-      weenieTarget.src = event.target.src;
+			weenieTarget.src = event.target.src;
 		});
-  });
-  
+	});
 
+	groom.forEach(e => {
+		e.addEventListener("click", function() {
+			groomTarget.src = event.target.src;
+		});
+	});
+
+	food.forEach(e => {
+		e.addEventListener("click", function() {
+			foodTarget.src = event.target.src;
+		});
+	});
+
+	clothes.forEach(e => {
+		e.addEventListener("click", function() {
+			clothesTarget.src = event.target.src;
+		});
+	});
+
+	walk.forEach(e => {
+		e.addEventListener("click", function() {
+			walkTarget.src = event.target.src;
+		});
+	});
+
+	navLinks.forEach(e => {
+		e.addEventListener("click", function(a) {
+			// weenieHeader.innerHTML = event.target.innerHTML;
+			a.preventDefault();
+		});
+	});
 }
 
 swapWeenie();
+
+function jumpTo(spot) {
+	let top = document.getElementById(spot).offsetTop;
+
+	window.scrollTo(0, top);
+}
+
+cartLink.addEventListener("click", function(e) {
+	let cartModal = document.getElementById("cartModal");
+
+	e.preventDefault();
+	cartModal.style.display = "block";
+});
+
+sellLink.addEventListener("click", function(e) {
+	let sellModal = document.getElementById("sellModal");
+
+	e.preventDefault();
+	sellModal.style.display = "block";
+});
+
+signLink.addEventListener("click", function(e) {
+	let signModal = document.getElementById("signModal");
+
+	e.preventDefault();
+	signModal.style.display = "block";
+});
+
+icon.addEventListener('click', function() {
+  let navModal = document.querySelector('nav');
+
+  navModal.style.display = 'block';
+  nav.style.position = 'static';
+})
+
+window.onclick = function(event) {
+	if (event.target === cartModal) cartModal.style.display = "none";
+	if (event.target === signModal) signModal.style.display = "none";
+	if (event.target === sellModal) sellModal.style.display = "none";
+	if (event.target === navModal) navModal.style.display = "none";
+};

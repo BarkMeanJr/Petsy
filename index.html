@@ -19,38 +19,56 @@
 		<div class="container">
 			<header class="header">
 				<span class="petsy-logo">
-					<i
-						class="fas fa-paw petsy-logo header"
-						id="icon"
-						onclick="openMenu()"
-					></i>
-					<a href="index.html" class="petsy-logo">Petsy</a>
+					<i class="fas fa-paw petsy-logo header" id="icon">Petsy</i>
 				</span>
-				<div class="search">
-					<input
-						type="search"
-						name="search"
-						id="search"
-						placeholder="Search ..."
-					/>
-					<!-- <button type="submit">
-						<i class="fas fa-search"></i>
-					</button> -->
-				</div>
-				<nav>
-					<a href="">Sell on Petsy</a>
-					<a href="">Register</a>
-					<a href="">Sign In</a>
-					<a href="">Cart</a>
+				<nav id="navModal">
+					<div class="navContent search">
+						<div class="search">
+							<input
+								type="search"
+								name="search"
+								id="search"
+								placeholder="Search ..."
+							/>
+							<!-- <button type="submit">
+				<i class="fas fa-search"></i>
+			</button> -->
+						</div>
+						<a href="index.html">Home</a>
+						<a href="" id="sellLink">Sell on Petsy</a>
+						<a href="" id="signLink">Sign In/Register</a>
+						<a href="" id="cartLink">Cart</a>
+					</div>
 				</nav>
 			</header>
 
-			<div class="shopLinks">
-				<a href="" id="toysLink">Toys & Entertainment</a>
-				<a href="" id="foodLink">Food & Treats</a>
-				<a href="" id="clotheLink">Clothing</a>
-				<a href="" id="walkLink">Dog Walking</a>
-				<a href="" id="groomLink">Dog Grooming</a>
+			<div id="sellModal" class="modal">
+				<div class="modalText">
+					<h3>Sell on Petsy</h3>
+				</div>
+			</div>
+
+			<div id="signModal" class="modal">
+				<div class="modalText">
+					<h3>Sign in to Petsy</h3>
+					<h4>Don't have an account? Register here</h4>
+				</div>
+			</div>
+
+			<div id="cartModal" class="modal">
+				<div class="modalText">
+					<h3>Petsy Cart</h3>
+				</div>
+			</div>
+
+			<div class="shopLinks" id="nav">
+				<a href="" id="toysLink" onclick="jumpTo('toySpot')"
+					>Toys & Entertainment</a
+				>
+				<a href="" id="foodLink" onclick="jumpTo('foodSpot')">Food & Treats</a>
+				<a href="" id="clotheLink" onclick="jumpTo('clothesSpot')">Clothing</a>
+				<a href="" id="walkLink" onclick="jumpTo('walkSpot')">Pet Walking</a>
+				<a href="" id="groomLink" onclick="jumpTo('groomSpot')">Pet Grooming</a>
 			</div>
 
 			<h1>
@@ -62,16 +80,6 @@
 					<span class="summary-heading"> What is Petsy? </span>
 					<div class="summary-content">
 						<div class="summary-content-1">
-							<h3>Your one-stop shop for all things pets!</h3>
-							<p>
-								We've got it all covered, from toys to food to booties for
-								walking (need someone to <a href="#">walk for you?</a>) and even
-								grooming! Petsy uses the latest in proprietary algorithmic
-								technology to promote synergy amongst humans and pets.
-								Buzzwords. Marketing. Viral. Joan Calamezzo.
-							</p>
-						</div>
-						<div class="summary-content-2">
 							<h3>
 								You won't ever need another pet site <strong>ever!</strong>
 							</h3>
@@ -80,6 +88,15 @@
 								better not get anything for your pets there, Petsy only. Nobody
 								else in the multiverse has the full range of pet-related items
 								and services that we provide, probably.
+							</p>
+						</div>
+						<div class="summary-content-2">
+							<h3>Your one-stop shop for all things pets!</h3>
+							<p>
+								We've got it all covered, from toys to food to booties for
+								walking and even grooming! Petsy uses the latest in proprietary
+								algorithmic technology to promote synergy amongst humans and
+								pets. Buzzwords. Marketing. Viral. Joan Calamezzo.
 							</p>
 						</div>
 						<div class="summary-content-3">
@@ -114,50 +131,149 @@
 				</section>
 
 				<section class="row weenie-row">
+					<span id="toySpot"></span>
 					<div class="weenie-header">
 						<h4>Toys & Entertainment</h4>
 					</div>
 					<div class="weenie-main">
-						<div class="weenie-links">
+						<div class="weenie-links pet-links">
 							<div class="weenie">
-								<img
-									src="Assets/Images/pet-toy-1.jpg"
-									alt=""
-								/>
+								<img src="Assets/Images/pet-toy-1.jpg" alt="" />
 							</div>
 							<div class="weenie">
-								<img
-									src="Assets/Images/pet-toy-2.jpg"
-									alt=""
-								/>
+								<img src="Assets/Images/pet-toy-2.jpg" alt="" />
 							</div>
 							<div class="weenie">
-								<img
-									src="Assets/Images/pet-toy-3.jpg"
-									alt=""
-								/>
+								<img src="Assets/Images/pet-toy-3.jpg" alt="" />
 							</div>
 							<div class="weenie">
-								<img
-									src="Assets/Images/pet-toy-4.jpg"
-									alt=""
-								/>
+								<img src="Assets/Images/pet-toy-4.jpg" alt="" />
 							</div>
 							<div class="weenie">
-								<img
-									src="Assets/Images/pet-toy-5.jpg"
-									alt=""
-								/>
+								<img src="Assets/Images/pet-toy-5.jpg" alt="" />
 							</div>
 							<div class="weenie">
-								<img
-									src="Assets/Images/pet-toy-6.jpg"
-									alt=""
-								/>
+								<img src="Assets/Images/pet-toy-6.jpg" alt="" />
 							</div>
 						</div>
 						<div class="weenie-selected">
-							<img src="" alt="">
+							<img src="" alt="" />
+						</div>
+					</div>
+
+					<div class="weenie-header">
+						<h4 id="foodSpot">Food & Treats</h4>
+					</div>
+					<div class="weenie-main">
+						<div class="weenie-links food-links">
+							<div class="food">
+								<img src="Assets/Images/pet-food-1.jpg" alt="" />
+							</div>
+							<div class="food">
+								<img src="Assets/Images/pet-food-2.jpg" alt="" />
+							</div>
+							<div class="food">
+								<img src="Assets/Images/pet-food-3.jpg" alt="" />
+							</div>
+							<div class="food">
+								<img src="Assets/Images/pet-food-4.jpg" alt="" />
+							</div>
+							<div class="food">
+								<img src="Assets/Images/pet-food-5.jpg" alt="" />
+							</div>
+							<div class="food">
+								<img src="Assets/Images/pet-food-6.jpg" alt="" />
+							</div>
+						</div>
+						<div class="weenie-selected food-selected">
+							<img src="" alt="" />
+						</div>
+					</div>
+
+					<div class="weenie-header">
+						<h4 id="clothesSpot">Clothing</h4>
+					</div>
+					<div class="weenie-main">
+						<div class="weenie-links clothes-links">
+							<div class="clothes">
+								<img src="Assets/Images/clothes-1.jpg" alt="" />
+							</div>
+							<div class="clothes">
+								<img src="Assets/Images/clothes-2.jpg" alt="" />
+							</div>
+							<div class="clothes">
+								<img src="Assets/Images/clothes-3.jpg" alt="" />
+							</div>
+							<div class="clothes">
+								<img src="Assets/Images/clothes-4.jpg" alt="" />
+							</div>
+							<div class="clothes">
+								<img src="Assets/Images/clothes-5.jpg" alt="" />
+							</div>
+							<div class="clothes">
+								<img src="Assets/Images/clothes-6.jpg" alt="" />
+							</div>
+						</div>
+						<div class="weenie-selected clothes-selected">
+							<img src="" alt="" />
+						</div>
+					</div>
+
+					<div class="weenie-header">
+						<h4 id="walkSpot">Walking</h4>
+					</div>
+					<div class="weenie-main">
+						<div class="weenie-links walk-links">
+							<div class="walk">
+								<img src="Assets/Images/walk-1.jpg" alt="" />
+							</div>
+							<div class="walk">
+								<img src="Assets/Images/walk-2.jpg" alt="" />
+							</div>
+							<div class="walk">
+								<img src="Assets/Images/walk-3.jpg" alt="" />
+							</div>
+							<div class="walk">
+								<img src="Assets/Images/walk-4.jpg" alt="" />
+							</div>
+							<div class="walk">
+								<img src="Assets/Images/walk-5.jpg" alt="" />
+							</div>
+							<div class="walk">
+								<img src="Assets/Images/walk-6.jpg" alt="" />
+							</div>
+						</div>
+						<div class="weenie-selected walk-selected">
+							<img src="" alt="" />
+						</div>
+					</div>
+
+					<div class="weenie-header">
+						<h4 id="groomSpot">Grooming</h4>
+					</div>
+					<div class="weenie-main">
+						<div class="weenie-links groom-links">
+							<div class="groom">
+								<img src="Assets/Images/grooming-1.jpg" alt="" />
+							</div>
+							<div class="groom">
+								<img src="Assets/Images/grooming-2.jpg" alt="" />
+							</div>
+							<div class="groom">
+								<img src="Assets/Images/grooming-goat.jpg" alt="" />
+							</div>
+							<div class="groom">
+								<img src="Assets/Images/grooming-tiger.jpg" alt="" />
+							</div>
+							<div class="groom">
+								<img src="Assets/Images/grooming-monkey.jpg" alt="" />
+							</div>
+							<div class="groom">
+								<img src="Assets/Images/grooming-man.jpg" alt="" />
+							</div>
+						</div>
+						<div class="weenie-selected groom-selected">
+							<img src="" alt="" />
 						</div>
 					</div>
 				</section>
@@ -234,17 +350,14 @@
 		<footer>
 			<div class="footer-right">
 				<span>&copy; 2019 Petsy, Inc.</span>
-				<span
-					>Design by: Jordan Cruz &nbsp;
+				<span>Design by: Jordan Cruz </span>
+				<span>
 					<a href="https://www.linkedin.com/jordan-cruz-correa"
 						><i class="fab fa-linkedin"></i
 					></a>
 					<a href="https://www.github.com/JordanCruzCorrea" target="_blank"
-						><i class="fab fa-github"></i
-					></a>
-					<!-- </span> -->
-					<!-- <a href="">Privacy</a> -->
-				</span>
+						><i class="fab fa-github"></i></a
+				></span>
 			</div>
 		</footer>
 		<script src="js/script.js"></script>
