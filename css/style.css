@@ -285,28 +285,43 @@ h1 {
 	font-family: "Roboto", sans-serif;
 }
 
+.weenie-main {
+  display: flex;
+  justify-content: space-around;
+}
+
 .weenie-links {
-	height: auto;
-	width: 100%;
+	/* height: 300px; */
+  /* width: 20%; */
+  flex: 1;
 	display: flex;
-	align-content: flex-start;
-	align-items: flex-start;
-	flex-flow: row nowrap;
-	justify-content: space-between;
+	align-content: space-around;
+	align-items: center;
+	flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* background-color: red; */
 }
 
 .weenie-links:last-child {
-	margin-right: 0;
-}
-
-.weenie-links img {
-	width: 90%;
-	height: auto;
+	/* margin-right: 0; */
 }
 
 .weenie {
-	width: 80%;
+	width: 40%;
 	height: auto;
+}
+
+.weenie img {
+	width: 100%;
+	height: auto;
+}
+
+.weenie-selected {
+  /* background-color: red; */
+  /* width: 100%; */
+  height: 100%;
+  display: flex;
+  flex: 2;
 }
 
 .summary {
@@ -448,6 +463,46 @@ footer a {
 	flex-flow: row nowrap;
 }
 
+@media screen and (max-width: 1068px) {
+  .weenie-links {
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+  .weenie img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .weenie-links {
+    /* flex-flow: column wrap;
+    justify-content: flex-end; */
+    align-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    flex: 1;
+  }
+
+  .weenie img {
+    width: 100%;
+  }
+
+  .weenie-selected {
+    flex: 1;
+  }
+
+  .reviews-content {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .header {
     /* background-color: red; */
@@ -484,6 +539,10 @@ footer a {
     display: block;
   }
 
+  .main-row {
+    /* align-items: center; */
+  }
+
   .summary-content {
     display: block;
     align-items: center;
@@ -494,21 +553,39 @@ footer a {
     display: block;
   }
 
-  .weenie-links {
+  .weenie-main {
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-end;
     align-items: center;
-    align-content: center;
   }
 
-  .reviews-content {
+  .weenie-links {
+    order: 1;
+    width: 100%;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    align-content: space-between;
+  }
+
+  .weenie img {
+    width: 100%;
+  }
+
+  .weenie-selected {
+    order: 0;
+    flex: 1;
+  }
+
+  /* .reviews-content {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
     align-content: center;
-  }
+  } */
 
   footer {
     display: block;
