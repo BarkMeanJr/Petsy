@@ -1,15 +1,17 @@
 let windowW = window.innerWidth;
 let windowH = window.innerHeight;
-let windowX600 = window.matchMedia("(max-width: 600px)");
+let windowX600 = window.matchMedia("(max-width: 700px)");
 let windowX1000 = window.matchMedia("(max-width: 1000px)");
 
-let cartLink = document.getElementById("cartLink");
-let signLink = document.getElementById("signLink");
+let homeLink = document.getElementById("homeLink")
 let sellLink = document.getElementById("sellLink");
+let signLink = document.getElementById("signLink");
+let cartLink = document.getElementById("cartLink");
 
-let navLinks = document.querySelectorAll(".shopLinks");
-let nav = document.querySelector('#nav');
-let icon = document.getElementById("icon");
+let shopLinks = document.querySelectorAll(".shopLinks");
+let shopLink = document.getElementById("shopLinks");
+let nav = document.getElementById("navLinks");
+let logo = document.querySelector(".petsy-logo");
 
 window.onscroll = function() {
 	scroll();
@@ -33,11 +35,10 @@ function toTop() {
 	document.documentElement.scrollTop = 0;
 }
 
-
 function linksToIcons(windowX600) {
 	let toyLink = document.getElementById("toysLink");
 	let foodLink = document.getElementById("foodLink");
-	let clothesLink = document.getElementById("clotheLink");
+	let clothesLink = document.getElementById("clothesLink");
 	let walkLink = document.getElementById("walkLink");
 	let groomLink = document.getElementById("groomLink");
 
@@ -58,19 +59,21 @@ function linksToIcons(windowX600) {
 windowX600.addListener(linksToIcons);
 linksToIcons(windowX600, windowX1000);
 
-// function navToIcons(windowX1000) {
-// 	if (windowX1000.matches) {
-// 		sellLink.innerHTML = '<i class="fas fa-store"></i>';
-// 		signLink.innerHTML = '<i class="fas fa-user-circle"></i>';
-// 		cartLink.innerHTML = '<i class="fas fa-shopping-cart"></i>';
-// 	} else {
-// 		sellLink.innerHTML = "Sell on Petsy";
-// 		signLink.innerHTML = "Sign In/Register";
-// 		cartLink.innerHTML = "Cart";
-// 	}
-// }
-// windowX1000.addListener(navToIcons);
-// navToIcons(windowX1000);
+function navToIcons(windowX600) {
+	if (windowX600.matches) {
+		homeLink.innerHTML = '<i class="fas fa-home"></i>';
+		sellLink.innerHTML = '<i class="fas fa-store"></i>';
+		signLink.innerHTML = '<i class="fas fa-user-circle"></i>';
+		cartLink.innerHTML = '<i class="fas fa-shopping-cart"></i>';
+	} else {
+		homeLink.innerHTML = "Home";
+		sellLink.innerHTML = "Sell on Petsy";
+		signLink.innerHTML = "Sign In/Register";
+		cartLink.innerHTML = "Cart";
+	}
+}
+windowX600.addListener(navToIcons);
+navToIcons(windowX600);
 
 function swapWeenie() {
 	let weenies = document.querySelectorAll(".weenie > img");
@@ -127,14 +130,12 @@ function swapWeenie() {
 		});
 	});
 
-	navLinks.forEach(e => {
+	shopLinks.forEach(e => {
 		e.addEventListener("click", function(a) {
-			// weenieHeader.innerHTML = event.target.innerHTML;
 			a.preventDefault();
 		});
 	});
 }
-
 swapWeenie();
 
 function jumpTo(spot) {
@@ -164,12 +165,16 @@ signLink.addEventListener("click", function(e) {
 	signModal.style.display = "block";
 });
 
-icon.addEventListener('click', function() {
-  let navModal = document.querySelector('nav');
+// logo.addEventListener("click", function() {
+// 	let navModal = document.getElementById("navModal");
 
-  navModal.style.display = 'block';
-  nav.style.position = 'static';
-})
+// 	if (windowX1000.matches) {
+// 		navModal.style.display = "block";
+// 		// nav.style.position = "static";
+// 	} else {
+// 		// nav.style.position = 'sticky';
+// 	}
+// });
 
 window.onclick = function(event) {
 	if (event.target === cartModal) cartModal.style.display = "none";

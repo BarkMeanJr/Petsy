@@ -19,22 +19,14 @@
 		<div class="container">
 			<header class="header">
 				<span class="petsy-logo">
-					<i class="fas fa-paw petsy-logo header" id="icon">Petsy</i>
+					<a href="index.html"
+						><i class="fas fa-paw petsy-logo header" id="icon">Petsy</i></a
+					>
 				</span>
+
 				<nav id="navModal">
-					<div class="navContent search">
-						<div class="search">
-							<input
-								type="search"
-								name="search"
-								id="search"
-								placeholder="Search ..."
-							/>
-							<!-- <button type="submit">
-				<i class="fas fa-search"></i>
-			</button> -->
-						</div>
-						<a href="index.html">Home</a>
+					<div class="navLinks" id="navLinks">
+						<a href="index.html" id="homeLink">Home</a>
 						<a href="" id="sellLink">Sell on Petsy</a>
 						<a href="" id="signLink">Sign In/Register</a>
 						<a href="" id="cartLink">Cart</a>
@@ -61,21 +53,27 @@
 				</div>
 			</div>
 
-			<div class="shopLinks" id="nav">
+			<div class="shopLinks" id="shopLinks">
 				<a href="" id="toysLink" onclick="jumpTo('toySpot')"
 					>Toys & Entertainment</a
 				>
 				<a href="" id="foodLink" onclick="jumpTo('foodSpot')">Food & Treats</a>
-				<a href="" id="clotheLink" onclick="jumpTo('clothesSpot')">Clothing</a>
+				<a href="" id="clothesLink" onclick="jumpTo('clothesSpot')">Clothing</a>
 				<a href="" id="walkLink" onclick="jumpTo('walkSpot')">Pet Walking</a>
 				<a href="" id="groomLink" onclick="jumpTo('groomSpot')">Pet Grooming</a>
 			</div>
 
-			<h1>
-				If it has to do with borks, heckins, woofs, or tippytaps, it’s on Petsy.
-			</h1>
+			<main class="main-row">
+				<section class="main-header">
+					<h1>
+						If it has to do with borks, heckins, woofs, or tippytaps, it’s on
+						Petsy.
+					</h1>
+					<div class="main-header-img">
+						<img src="Assets/Images/dog-walk.png" alt="" />
+					</div>
+				</section>
 
-			<main class="row main-row">
 				<section class="summary">
 					<span class="summary-heading"> What is Petsy? </span>
 					<div class="summary-content">
@@ -110,35 +108,29 @@
 					</div>
 				</section>
 
-				<section class="section1">
-					<section class="section1">
-						<div class="section1img">
-							<img src="Assets/Images/dog-walk.png" alt="" />
-						</div>
-					</section>
+				<section class="window">
+					<div class="window-img">
+						<img src="Assets/Images/everyday-pet.png" alt="" />
+					</div>
 
-					<div class="column main-column">
-						<section class="section2 row">
-							<img src="Assets/Images/everyday-pet.png" alt="" />
-						</section>
-						<section class="section3 row">
-							<h4>
-								I'm not entirely sure what kind of pet that is in the window but
-								we definitely have stuff for it for sure, probably
-							</h4>
-						</section>
+					<div class="window-heading">
+						<h4>
+							I'm not entirely sure what kind of pet that is in the window but
+							we definitely have stuff for it for sure, probably
+						</h4>
 					</div>
 				</section>
 
-				<section class="row weenie-row">
+				<section class="weenie-row">
 					<span id="toySpot"></span>
 					<div class="weenie-header">
-						<h4>Toys & Entertainment</h4>
+						<h3>Toys & Entertainment</h3>
+						<span>Here are some of our most popular items</span>
 					</div>
 					<div class="weenie-main">
 						<div class="weenie-links pet-links">
 							<div class="weenie">
-								<img src="Assets/Images/pet-toy-1.jpg" alt="" />
+								<img src="Assets/Images/pet-toy-1.jpg" alt="Red rubber bone" />
 							</div>
 							<div class="weenie">
 								<img src="Assets/Images/pet-toy-2.jpg" alt="" />
@@ -161,8 +153,10 @@
 						</div>
 					</div>
 
+					<span id="foodSpot"></span>
 					<div class="weenie-header">
-						<h4 id="foodSpot">Food & Treats</h4>
+						<h3>Food & Treats</h3>
+						<span>Here are some of our most popular items</span>
 					</div>
 					<div class="weenie-main">
 						<div class="weenie-links food-links">
@@ -190,8 +184,10 @@
 						</div>
 					</div>
 
+					<span id="clothesSpot"></span>
 					<div class="weenie-header">
-						<h4 id="clothesSpot">Clothing</h4>
+						<h3>Clothing</h3>
+						<span>Here are some of our most popular items</span>
 					</div>
 					<div class="weenie-main">
 						<div class="weenie-links clothes-links">
@@ -219,8 +215,10 @@
 						</div>
 					</div>
 
+					<span id="walkSpot"></span>
 					<div class="weenie-header">
-						<h4 id="walkSpot">Walking</h4>
+						<h3>Walking</h3>
+						<span>Here are some of our most popular items</span>
 					</div>
 					<div class="weenie-main">
 						<div class="weenie-links walk-links">
@@ -248,8 +246,10 @@
 						</div>
 					</div>
 
+					<span id="groomSpot"></span>
 					<div class="weenie-header">
-						<h4 id="groomSpot">Grooming</h4>
+						<h3>Grooming</h3>
+						<span>Here are some of our most popular items</span>
 					</div>
 					<div class="weenie-main">
 						<div class="weenie-links groom-links">
@@ -278,7 +278,7 @@
 					</div>
 				</section>
 
-				<section class="row reviews">
+				<section class="reviews">
 					<div class="reviews-header">
 						<h4>Reviews</h4>
 					</div>
@@ -352,7 +352,7 @@
 				<span>&copy; 2019 Petsy, Inc.</span>
 				<span>Design by: Jordan Cruz </span>
 				<span>
-					<a href="https://www.linkedin.com/jordan-cruz-correa"
+					<a href="https://www.linkedin.com/in/jordan-cruz-correa/" target="_blank"
 						><i class="fab fa-linkedin"></i
 					></a>
 					<a href="https://www.github.com/JordanCruzCorrea" target="_blank"
