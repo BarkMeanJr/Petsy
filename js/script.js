@@ -3,7 +3,11 @@ let windowH = window.innerHeight;
 let windowX600 = window.matchMedia("(max-width: 700px)");
 let windowX1000 = window.matchMedia("(max-width: 1000px)");
 
+<<<<<<< HEAD
 let homeLink = document.getElementById("homeLink")
+=======
+let homeLink = document.getElementById("homeLink");
+>>>>>>> Update readme, cleans+fixes
 let sellLink = document.getElementById("sellLink");
 let signLink = document.getElementById("signLink");
 let cartLink = document.getElementById("cartLink");
@@ -123,6 +127,7 @@ function swapWeenie() {
 			clothesTarget.src = event.target.src;
 		});
 	});
+<<<<<<< HEAD
 
 	walk.forEach(e => {
 		e.addEventListener("click", function() {
@@ -130,6 +135,15 @@ function swapWeenie() {
 		});
 	});
 
+=======
+
+	walk.forEach(e => {
+		e.addEventListener("click", function() {
+			walkTarget.src = event.target.src;
+		});
+	});
+
+>>>>>>> Update readme, cleans+fixes
 	shopLinks.forEach(e => {
 		e.addEventListener("click", function(a) {
 			a.preventDefault();
@@ -165,6 +179,7 @@ signLink.addEventListener("click", function(e) {
 	signModal.style.display = "block";
 });
 
+<<<<<<< HEAD
 // logo.addEventListener("click", function() {
 // 	let navModal = document.getElementById("navModal");
 
@@ -176,6 +191,8 @@ signLink.addEventListener("click", function(e) {
 // 	}
 // });
 
+=======
+>>>>>>> Update readme, cleans+fixes
 window.onclick = function(event) {
 	if (event.target === cartModal) cartModal.style.display = "none";
 	if (event.target === signModal) signModal.style.display = "none";
