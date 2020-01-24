@@ -1,5 +1,10 @@
 # Petsy
 
+CHECK HERE FOR FULLSTACK VERSION -
+Backend repo: https://github.com/JordanCruzCorrea/petsy_redeux_api
+Frontend repo: https://github.com/JordanCruzCorrea/petsy_redeux_client
+Live fullstack site: https://petsy-redeux.netlify.com/
+
 ![Petsy Demo](Petsy.gif)
 
 Petsy is a one-stop shop for all the things you might need for your animals. There are sections to browse toys, food and clothing, even grooming and walking services. You can navigate using the links at the top of the page and they will bring you to the appropriate section where you can select from the current best selling items or services.
