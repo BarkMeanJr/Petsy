@@ -1,8 +1,11 @@
 # Petsy
 
 CHECK HERE FOR FULLSTACK VERSION -
+
 Backend repo: https://github.com/JordanCruzCorrea/petsy_redeux_api
+
 Frontend repo: https://github.com/JordanCruzCorrea/petsy_redeux_client
+
 Live fullstack site: https://petsy-redeux.netlify.com/
 
 ![Petsy Demo](Petsy.gif)
